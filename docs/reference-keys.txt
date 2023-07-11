@@ -1,3 +1,11 @@
+gaussian-process-mbo-for-random-forests
+overview-of-gaussian-processes
+application-to-random-forests
+data
+results
+grid-search
+gaussian-process-search
+discussion
 the-effect-of-increased-campaign-spending-on-election-results
 background
 motivating-trends
@@ -14,7 +22,7 @@ analysis
 the-effect-of-seed-market-competition-on-farmers
 chicago-taxi-demand-estimation
 introduction-1
-data
+data-1
 trends
 possible-estimation-procedures
 stl-decomposition
