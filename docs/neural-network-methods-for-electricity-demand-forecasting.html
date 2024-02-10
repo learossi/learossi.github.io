@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Neural Network Methods for Electricity Demand Forecasting | Personal Projects</title>
-  <meta name="description" content="2 Neural Network Methods for Electricity Demand Forecasting | Personal Projects" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <title>4 Neural Network Methods for Electricity Demand Forecasting | Personal Projects</title>
+  <meta name="description" content="4 Neural Network Methods for Electricity Demand Forecasting | Personal Projects" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Neural Network Methods for Electricity Demand Forecasting | Personal Projects" />
+  <meta property="og:title" content="4 Neural Network Methods for Electricity Demand Forecasting | Personal Projects" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Neural Network Methods for Electricity Demand Forecasting | Personal Projects" />
+  <meta name="twitter:title" content="4 Neural Network Methods for Electricity Demand Forecasting | Personal Projects" />
   
   
   
@@ -53,7 +53,97 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -68,34 +158,52 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html"><i class="fa fa-check"></i><b>1</b> The Effect of Increased Campaign Spending on Election Results</a>
+<li class="chapter" data-level="1" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html"><i class="fa fa-check"></i><b>1</b> Convergence of M-Estimators made simple(r)</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
-<li class="chapter" data-level="1.2" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#motivating-trends"><i class="fa fa-check"></i><b>1.2</b> Motivating Trends</a></li>
-<li class="chapter" data-level="1.3" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#initial-regression-analysis"><i class="fa fa-check"></i><b>1.3</b> Initial Regression Analysis</a></li>
-<li class="chapter" data-level="1.4" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#iv-regression"><i class="fa fa-check"></i><b>1.4</b> IV Regression</a></li>
-<li class="chapter" data-level="1.5" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#discussion-conclusion"><i class="fa fa-check"></i><b>1.5</b> Discussion &amp; Conclusion</a></li>
+<li class="chapter" data-level="1.1" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html#what-is-an-m-estimator"><i class="fa fa-check"></i><b>1.1</b> What is an M-Estimator?</a></li>
+<li class="chapter" data-level="1.2" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html#consistency"><i class="fa fa-check"></i><b>1.2</b> Consistency</a></li>
+<li class="chapter" data-level="1.3" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html#rate-of-convergence"><i class="fa fa-check"></i><b>1.3</b> Rate of Convergence</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html"><i class="fa fa-check"></i><b>2</b> Neural Network Methods for Electricity Demand Forecasting</a>
+<li class="chapter" data-level="2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html"><i class="fa fa-check"></i><b>2</b> Gaussian Process MBO for Random Forests</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#common-neural-network-designs-for-forecasting"><i class="fa fa-check"></i><b>2.2</b> Common Neural Network Designs for Forecasting</a></li>
-<li class="chapter" data-level="2.3" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#problem-statement-and-data"><i class="fa fa-check"></i><b>2.3</b> Problem Statement and Data</a></li>
-<li class="chapter" data-level="2.4" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#lstm-results"><i class="fa fa-check"></i><b>2.4</b> LSTM Results</a></li>
-<li class="chapter" data-level="2.5" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#cnn-results"><i class="fa fa-check"></i><b>2.5</b> CNN Results</a></li>
-<li class="chapter" data-level="2.6" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#analysis"><i class="fa fa-check"></i><b>2.6</b> Analysis</a></li>
+<li class="chapter" data-level="2.1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#overview-of-gaussian-processes"><i class="fa fa-check"></i><b>2.1</b> Overview of Gaussian Processes</a></li>
+<li class="chapter" data-level="2.2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#application-to-random-forests"><i class="fa fa-check"></i><b>2.2</b> Application to Random Forests</a></li>
+<li class="chapter" data-level="2.3" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#data"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
+<li class="chapter" data-level="2.4" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#results"><i class="fa fa-check"></i><b>2.4</b> Results</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#grid-search"><i class="fa fa-check"></i><b>2.4.1</b> Grid Search</a></li>
+<li class="chapter" data-level="2.4.2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-search"><i class="fa fa-check"></i><b>2.4.2</b> Gaussian Process Search</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="the-effect-of-seed-market-competition-on-farmers.html"><a href="the-effect-of-seed-market-competition-on-farmers.html"><i class="fa fa-check"></i><b>3</b> The Effect of Seed Market Competition on Farmers</a></li>
-<li class="chapter" data-level="4" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html"><i class="fa fa-check"></i><b>4</b> Chicago Taxi Demand Estimation</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#data"><i class="fa fa-check"></i><b>4.1.1</b> Data</a></li>
-<li class="chapter" data-level="4.1.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#trends"><i class="fa fa-check"></i><b>4.1.2</b> Trends</a></li>
-<li class="chapter" data-level="4.1.3" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#possible-estimation-procedures"><i class="fa fa-check"></i><b>4.1.3</b> Possible Estimation Procedures</a></li>
-<li class="chapter" data-level="4.1.4" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#stl-decomposition"><i class="fa fa-check"></i><b>4.1.4</b> STL Decomposition</a></li>
+<li class="chapter" data-level="2.5" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#discussion"><i class="fa fa-check"></i><b>2.5</b> Discussion</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#full-data-procedures"><i class="fa fa-check"></i><b>4.2</b> Full Data Procedures</a></li>
+<li class="chapter" data-level="3" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html"><i class="fa fa-check"></i><b>3</b> The Effect of Increased Campaign Spending on Election Results</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#motivating-trends"><i class="fa fa-check"></i><b>3.2</b> Motivating Trends</a></li>
+<li class="chapter" data-level="3.3" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#initial-regression-analysis"><i class="fa fa-check"></i><b>3.3</b> Initial Regression Analysis</a></li>
+<li class="chapter" data-level="3.4" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#iv-regression"><i class="fa fa-check"></i><b>3.4</b> IV Regression</a></li>
+<li class="chapter" data-level="3.5" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#discussion-conclusion"><i class="fa fa-check"></i><b>3.5</b> Discussion &amp; Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html"><i class="fa fa-check"></i><b>4</b> Neural Network Methods for Electricity Demand Forecasting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#common-neural-network-designs-for-forecasting"><i class="fa fa-check"></i><b>4.2</b> Common Neural Network Designs for Forecasting</a></li>
+<li class="chapter" data-level="4.3" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#problem-statement-and-data"><i class="fa fa-check"></i><b>4.3</b> Problem Statement and Data</a></li>
+<li class="chapter" data-level="4.4" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#lstm-results"><i class="fa fa-check"></i><b>4.4</b> LSTM Results</a></li>
+<li class="chapter" data-level="4.5" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#cnn-results"><i class="fa fa-check"></i><b>4.5</b> CNN Results</a></li>
+<li class="chapter" data-level="4.6" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#analysis"><i class="fa fa-check"></i><b>4.6</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-effect-of-seed-market-competition-on-farmers.html"><a href="the-effect-of-seed-market-competition-on-farmers.html"><i class="fa fa-check"></i><b>5</b> The Effect of Seed Market Competition on Farmers</a></li>
+<li class="chapter" data-level="6" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html"><i class="fa fa-check"></i><b>6</b> Chicago Taxi Demand Estimation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#introduction-1"><i class="fa fa-check"></i><b>6.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#data-1"><i class="fa fa-check"></i><b>6.1.1</b> Data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#trends"><i class="fa fa-check"></i><b>6.1.2</b> Trends</a></li>
+<li class="chapter" data-level="6.1.3" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#possible-estimation-procedures"><i class="fa fa-check"></i><b>6.1.3</b> Possible Estimation Procedures</a></li>
+<li class="chapter" data-level="6.1.4" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#stl-decomposition"><i class="fa fa-check"></i><b>6.1.4</b> STL Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#full-data-procedures"><i class="fa fa-check"></i><b>6.2</b> Full Data Procedures</a></li>
 </ul></li>
 </ul>
 
@@ -114,28 +222,28 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="neural-network-methods-for-electricity-demand-forecasting" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Neural Network Methods for Electricity Demand Forecasting<a href="neural-network-methods-for-electricity-demand-forecasting.html#neural-network-methods-for-electricity-demand-forecasting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Introduction<a href="neural-network-methods-for-electricity-demand-forecasting.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="neural-network-methods-for-electricity-demand-forecasting" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Neural Network Methods for Electricity Demand Forecasting<a href="neural-network-methods-for-electricity-demand-forecasting.html#neural-network-methods-for-electricity-demand-forecasting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introduction<a href="neural-network-methods-for-electricity-demand-forecasting.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Electricity demand estimation is a classic problem in machine learning with many papers addressing potential approaches. The classical approach in the literature for time series estimation are CART methods where suitably deep trees can model the discontinuities induced by sudden changes in weather. However, this is an open problem that permits a variety of solutions such as classical time series models like exponential smoothing with a variety of seasonal adjustments or Monte Carlo simulations of weather models as the basis for ensemble learning. Not wanting to commit myself to simulating weather dynamics, I’m going to investigate time series forecasting of the local power demand in New England using several common neural network models for forecasting and compare their performance.</p>
 </div>
-<div id="common-neural-network-designs-for-forecasting" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Common Neural Network Designs for Forecasting<a href="neural-network-methods-for-electricity-demand-forecasting.html#common-neural-network-designs-for-forecasting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="common-neural-network-designs-for-forecasting" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Common Neural Network Designs for Forecasting<a href="neural-network-methods-for-electricity-demand-forecasting.html#common-neural-network-designs-for-forecasting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While there are an incredibly large class of models that can learn time dependencies (and innumerable additional variations on each broader class), there are only two main neural network architectures which are commonly recommended for general purpose time-series forecasting.</p>
 <p>The first are varieties of recurrent Neural Networks (RNNs) which learn how to create long term representations in memory of previous events. The most popular variants thereof are GRU networks and it’s more complicated, but more popular, cousin, the rather confusingly named long short-term memory network or LSTM. LSTMs blocks consist of a single layer which is unwound to learn a series of inputs in the manner of all similar RNNs. However, in addition to learning a weight matrix that maps into its latent space, LSTMs also learn a series of mappings into and out of a memory unit. This memory unit can be of an arbitrary dimensionality and the LSTM learns dependencies upon the memory unit which allow the content of the input to alter the memory unit (ie remember a current feature or forget a feature it has remembered in the past) or allows the memory unit’s content to alter current predictions. The LSTM learns these mappings in the usual RNN fashion of backpropogation through time though the number of number of parameters to learn is much higher per latent dimension due to the existence of the memory cell.</p>
 <p>These extra connections allows LSTMs to learn more complicated mappings back in time; functionally, LSTMs can be thought of as an extension on ResNet type architectures where LSTMs can learn more complicated types of skip connections. In fact, before transformers came into vogue for learning text embeddings, LSTMs were a popular option because of their ability to learn long term dependencies between different types of words in a sentence. It is this same property to learn longer term dependencies that we wish to exploit for short term power forecasting.</p>
 <p>The second primary method for learning time dependencies are convolution neural networks (CNNs). CNNs originated from adaptations of filtering techniques in image processing to neural networks; as a result, CNNs are primarily popular for their applications to image classification tasks. The traditional CNN design alternates filter layers where an arbitrary number of discrete filters from classical image processing (think sharpening or blurring filters) are convolved with different color layers of an image to produce feature mappings. These features are then fed into pooling layers which are essentially dimensionality reduction techniques that attempt to preserve spatial relationships between features. By chaining these layers together, one can build feature representations that are roughly translation invariant which is good for image classification where translation invariance is an important property.</p>
 <p>These same techniques can also by applied to applied to time series analysis by reducing the input dimension by one. Whereas in image classification 2d filters are applied across different color channels, in time series 1d filter are applied across different input features while pooling and fully connected layers are identical. While translation invariance and pooling layers are less important here, the local nature of filter layers allow the network to learn to identify types of events that have heterogenous future effects on the series and then propogate those forwards in the fully connected layers.</p>
 </div>
-<div id="problem-statement-and-data" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Problem Statement and Data<a href="neural-network-methods-for-electricity-demand-forecasting.html#problem-statement-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="problem-statement-and-data" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Problem Statement and Data<a href="neural-network-methods-for-electricity-demand-forecasting.html#problem-statement-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Short term electricity demand forecasting is an important task for managerial authorities who control the transmission of electricity and must respond to changing consumer demand and generation authorities who must make decision about whether it is profitable to turn plants on or off at certain times. Having robust models for all these parties allows operators to make more informed decisions about aligning supply with demand and thus creates more efficient market outcomes while avoiding problems like rolling blackouts or brownouts due to underprovision.</p>
 <p>We attempt to forecast per state demand in New England using previous values of demand in the relevant state and in neighboring states. Given that demand is highly dependent on temperature and thus time of year, the actual timestamps on the time series can also be used as features. In this case, we transform the month and hour components using sin-cosine transforms and use those as feature inputs.</p>
 <p>Our data is from the Energy Information Administration which, unsurprisingly, publishes energy demand information. Specifically, the EIA publishes per hour demand information broken down by specific state, grid authority, and region. We use the EIA API to pull a three year stretch of demand information over a group of New England states which we then plug into our neural network designs. I train on short term prediction accuracy, ie how good is the network at predicting the next hour of demand. This is a relatively approachable task that demands the network learn both trends over time, level changes over seasons, and short terms changes across days (ie over 24 or so samples).</p>
 </div>
-<div id="lstm-results" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> LSTM Results<a href="neural-network-methods-for-electricity-demand-forecasting.html#lstm-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lstm-results" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> LSTM Results<a href="neural-network-methods-for-electricity-demand-forecasting.html#lstm-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The main parameter to tune in LSTMs is the number of latent features. This allows the network to learn more complex feature representations across time. However, the number of parameters that arise from an increase in feature dimension is large meaning such an increase must be used sparingly if training time is an issue. Take this Keras printout from a relatively simple network of an LSTM layer followed by a fully connected layer which predicts one output:</p>
 <pre><code>## Model: &quot;sequential&quot;
 ## ________________________________________________________________________________
@@ -156,8 +264,8 @@
 <p><img src="Electricity_Demand_files/figure-html/lstm_lr_plot-1.png" width="672" /></p>
 <p>It is clear that a learning rate of .001 wins out in this case and it seems that we hit it more or less on the head as both other learning rates exceed the test loss. Notably, for the blue .001 loss, the MSE has a valley at around 25 epochs and spikes upwards. We can say that playing around with higher epoch counts, early stopping is highly beneficial in this context as it has the capacity to overfit rather strongly otherwise. Note that the loss is MSE rather than MAE and the data is standardized which means that average error is around .3 standard deviations for the optimal model, which, all in all, isn’t terrible and serves as a reasonable benchmark with which to compare CNN architectures.</p>
 </div>
-<div id="cnn-results" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> CNN Results<a href="neural-network-methods-for-electricity-demand-forecasting.html#cnn-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="cnn-results" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> CNN Results<a href="neural-network-methods-for-electricity-demand-forecasting.html#cnn-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Remember when I said that I wasn’t going to do grid search on CNN parameters? I meant that. I could spend all my day (and computing power) sitting around playing with stride, activation functions, pooling layer width, kernel size, padding policy, etc. I’m not going to do that because it sounds boring. Also, that not quite the point here when I only want to get a rough comparison between LSTMs and CNNs.</p>
 <p>The thing about CNNs is that they don’t have complicated state transition maps which means that they don’t require comparable parameters to a LSTM for the same depth. The first thing we test for CNNs is also model complexity and to make things fair we’ve decided to create architectures with comparable parameters counts. Note that counting parameters isn’t a perfect solution here - models take different amounts of time to train and offer different amounts of flexibility per parameter. If increased parameter count concerns us because of increased training time, trying to measure said training time and equate it between models creates a very difficult situation where results are highly heterogenous between computer systems with different memory architectures despite identical algorithms (on top of the obvious semantic problems). If it concerns us because we want to equate model expressivity, the explicit bounds in the literature are both loose and very narrow while trying to measure effective degrees of freedom through some sort of matrix method (think smoothing splines) requires us to train models and identify global minima: which we can’t do. So, we just take the naive approach and assume that equality of parameters roughly implies equality of other quantities of interest.</p>
 <p>The structure of our CNN model is relatively simple. Two convolution layers with kernels of size 19 and 11 are interspersed with 2 max pooling layers with kernels of size 3, which is followed by a fully connected layer that is linked to the output. The number of filters for each of the convolution layers is varied in order to achieve rough equality in the number of parameters between the comparable LSTM models and the CNNs.</p>
@@ -170,8 +278,8 @@
 <p><img src="Electricity_Demand_files/figure-html/cnn_lr_plot-1.png" width="672" /></p>
 <p>The lower learning rates are comparable to each other while the higher one clearly struggles and bounces around in the training data. For the test data, they all suck. The optimal LSTM model had a test error (with early stopping) of around 1/2. The best CNN is 50% greater than that. Perhaps this is a problem that could be corrected with enough training but there’s no a priori reason to believe an LSTM wouldn’t also improve a commensurate amount.</p>
 </div>
-<div id="analysis" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Analysis<a href="neural-network-methods-for-electricity-demand-forecasting.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="analysis" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Analysis<a href="neural-network-methods-for-electricity-demand-forecasting.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This analysis seems to indicate that LSTMs outperform CNNs on this specific dataset. This fact is not terribly surprising. We’ve already outlined how data limitations on CNNs make them less useful when modeling longer term dependencies. In addition, the kernel-pooling structure of typical CNNs is made to create translation invariance in image classification tasks which is not what one necessarily wants in a time-series regression context.</p>
 <p>If there’s one good lesson here it’s probably that CNNs really aren’t as good as LSTMs for this specific sort of task but that one should really let one’s problem domain guide model choice. Technically, CNNs and LSTMs are both models that can function in a time-series context. However, when one needs to model longer term dependencies (like fluctuations in power demand over the week when data is this granular), CNNs have specific constraints that make them difficult to use from an efficiency and memory perspective. However, I suspect that if one only needed to model short term dependencies, CNNs would be more efficient as they more explicitly model connections.</p>
 <p>And of course, this is only one experiment on the two most common sorts of models that are recommended for these sorts of tasks. One could also use an explicit time-series model (ARMA or the like), a random forest, smoothing splines, or even the combined CNN-LSTM models which are often held up as more efficient than either one. All that said, there are reasons why people don’t readily apply certain types of models to data like this and if you choose to use a hyper-flexible model for time series, it should be because there are a multitude of factors that weigh in favor of its use.</p>

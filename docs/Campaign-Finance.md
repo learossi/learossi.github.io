@@ -3,7 +3,7 @@ title: "Effect of Increased Spending on Election Results"
 output:
   html_document: default
   pdf_document: default
-date: "2023-07-01"
+date: "2024-02-09"
 ---
 
 # The Effect of Increased Campaign Spending on Election Results

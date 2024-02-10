@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Personal Projects</title>
-  <meta name="description" content="Page not found | Personal Projects" />
+  <title>1 Convergence of M-Estimators made simple(r) | Personal Projects</title>
+  <meta name="description" content="1 Convergence of M-Estimators made simple(r) | Personal Projects" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Personal Projects" />
+  <meta property="og:title" content="1 Convergence of M-Estimators made simple(r) | Personal Projects" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Personal Projects" />
+  <meta name="twitter:title" content="1 Convergence of M-Estimators made simple(r) | Personal Projects" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="preface.html"/>
+<link rel="next" href="gaussian-process-mbo-for-random-forests.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,19 +222,55 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="convergence-of-m-estimators-made-simpler" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Convergence of M-Estimators made simple(r)<a href="convergence-of-m-estimators-made-simpler.html#convergence-of-m-estimators-made-simpler" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>I’ve been reading <span class="citation">Van der Vaart (<a href="#ref-vander" role="doc-biblioref">2000</a>)</span> recently and, to be frank, I’ve found parts of it confusing. Chapter 5 deals with the properties of M and Z estimators and is the bedrock for many portions of the book in that most types of statistics can be studied in the context of these sorts of estimators (sufficient conditions for the consistency of maximum likelihood are often expressed as M estimators). Unfortunately, as is very common in statistics, the estimator properties are highly polymorphic in different types of spaces and with different constraints on the estimators themselves or on their limits. This reality necessitates a variety of theorems that I find obscures the important overriding themes about the relevant convergence theorems. Instead of simply repeating the proofs in Van der Vaart, I aim here to more clearly explain the important properties of such estimators and the implications of the proofs. Detailed explanations of the proofs can be found in the book itself since I don’t really see the point of going line-by-line again here.</p>
+<div id="what-is-an-m-estimator" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> What is an M-Estimator?<a href="convergence-of-m-estimators-made-simpler.html#what-is-an-m-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>M-Estimators are important because their definition is sufficiently general to include most estimators in common use. The most important is obviously maximum likelihood (whose properties are ironically usually proved using its correspondence to method-of-moments but that’s neither here nor there). The main problem M-Estimators try to solve is as such: we have a collection of iid random variables who come from one in a family of distributions indexed by a parameter <span class="math inline">\(\theta\)</span>: find a guess for <span class="math inline">\(\theta\)</span> that converges to the population value as number of realizations of your random variables increases to infinity (the estimatory is more general than that but the previous problem is usually the one it solves).</p>
+<p>M-Estimators consist of a set of iid random variables, <span class="math inline">\(X_i\)</span>, and a sequence of functions <span class="math inline">\(M_n\)</span> that defines the estimator. For each realization of n random variables, the M-Estimator is the value of <span class="math inline">\(\theta\)</span> which maximizes the function <span class="math inline">\(M_n\)</span>. The most common form of an M-estimator is as a sum of n criterion functions <span class="math inline">\(m_n\)</span>:
+<span class="math display">\[
+\begin{equation}
+\operatorname*{argmax}_\theta M_n = \operatorname*{argmax}_\theta ( \frac{1}{N}\sum_{N} m_\theta(X_i))
+\end{equation}
+\]</span>
+A closely related concept is the Z-estimator (my guess is that it’s Z as in “zero-estimator” or of one the usual leftover fascinations of mathematicians with the German language). Z-estimators are defined similarly except they replace the argmax with an equality condition. The corresponding form with criterion functions is:
+<span class="math display">\[
+\Psi_n(\theta) = \frac{1}{N}\sum_{N}\psi_\theta(X_i)=0
+\]</span>
+The Z-estimator is the value of <span class="math inline">\(\theta\)</span> which satisfies the equality. These two estimators are equivalent for differentiable functions where <span class="math inline">\(\psi_\theta\)</span> is just the derivative of <span class="math inline">\(m_\theta\)</span>. Even if the function is non-differentiable, similar regularity conditions can be applied to maxima and zeros respectively which allows consistency proofs for one type of estimator to be applied to the other.</p>
+<p>The choice of <span class="math inline">\(m_\theta\)</span> allows the estimator to function differently depending on what you want <span class="math inline">\(\theta\)</span> to estimate. Choosing <span class="math inline">\(m_\theta\)</span> to be the log-likelihood recovers the maximum likelihood estimator. A Z-estimator for <span class="math inline">\(\sum_{i=1}^{n}(X_i - \theta)\)</span> recovers the sample mean. One can also choose more general sequences of functions <span class="math inline">\(M_n\)</span> though this necessitates a separate convergence proof. This flexibility means many types of estimators can be recast in this light which allows for simpler consistency and convergence proofs.</p>
+</div>
+<div id="consistency" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Consistency<a href="convergence-of-m-estimators-made-simpler.html#consistency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the case where an M-estimator is the argmax of a sum of criterion functions, the value of <span class="math inline">\(\lim\limits_{n \to \infty} \sup_{\theta} M_n\)</span> is trivially equal to <span class="math inline">\(E_X(M({\theta_0}))\)</span> where <span class="math inline">\(\theta_0\)</span> is the true parameter that maximizes the function across the true distribution function. This follows by the law of large numbers and is essentially definitional. The following proofs assume the property that <span class="math inline">\(M_n(\theta)\)</span> converges to the maximum: more precisely, for the sequence of estimators <span class="math inline">\(\theta_n\)</span>, <span class="math inline">\(M_n(\theta_n) &gt; M(\theta_0) - o(1)\)</span> where <span class="math inline">\(o(1)\)</span> is a function that converges to 0. For more complicated <span class="math inline">\(M\)</span>s which don’t make use of sums of criterion functions, this property must be proved separately of the consistency proof which makes them much more unwieldy.</p>
+<p>Rather than diving into the few consistency proofs, it might merit dicussion what exactly is it that can cause an M-estimator to not be consistent. We’ve already assumed that the output (separate of the value of <span class="math inline">\(\theta\)</span>) of the M-estimator converges to the maximum across the parameter set: however, this is not the same as consistency. To be a consistent estimator, the M-estimator has to converge to a single <span class="math inline">\(\theta\)</span> which has the desired function value. There are two separate cases where this can fail. For one, if <span class="math inline">\(M_n \rightarrow M\)</span> st <span class="math inline">\(M\)</span> has multiple equal maxima it may be that <span class="math inline">\(M\)</span> oscillates between those maxima and never settles on one to converge to even in the limit. Secondly, imagine the parameter set isn’t compact. While the maxima may occur on a defined point, it may be that the maxima occurs at infinity in the limit which corresponds to a train of maxima going on infinitely for the <span class="math inline">\(M_n\)</span> which don’t even have a convergent subsequence. Consistency proofs take on different assumptions about <span class="math inline">\(M_n\)</span> that try to control these pathological conditions in order to attain consistency.</p>
+<p>The most basic of consistency proofs is Wald’s consistency proof which is commonly referred to as the “classical” approach to consistency. Here, the estimator takes the criterion function form which is assumed to be upper-semicontinuous. Generally speaking, one needs some assumption about maximum of the limit estimator being unique, but Wald doesn’t assume that. So, the classical proof doesn’t rule out oscillating solutions on a set of multiple maxima and is more of a consistency in the loose hand-waving sort of way proof. Nevertheless, is does rule out divergence to infinity sorts of pathologies by assuming that the set of parameters is either compact or is eventually bounded (this may need to be a separate proof). From there, the compactness condition allows one to build a finite subcover of the parameter space except for decreasing neighborhoods surrounding the maximizing parameters. It is then shown using the convergence assumption that the probability of the parameter n being in any of those sets approaches zero.</p>
+<p>This proof is nice in that it should be familiar with anyone who has taken a real analysis course. However, the assumptions are very restrictive and hard to generalize: this is especially true of the compactness assumption. Additionally, the fact that it proves convergence to a set instead of a point is problematic in that we would like to use this to put bounds on the asymptotic convergence which we can’t do if it doesn’t technically converge.</p>
+<p>The next two proofs aim to remedy these concerns by adding new (and hopefully minimal) assumptions to introduce true converge to a broader range of solutions. The easiest way to replace compactness in the parameter set is to impose regularity on the type of allowed convergence to the asymptotic M-estimator. If we assume that <span class="math inline">\(M_n\)</span> converges to <span class="math inline">\(M\)</span> uniformly and the maximum of the asymptotic estimator is strictly separated (ie there is a parameter value for which all values outside a neighborhood are less) then we have consistency in a more common sense. In this case, the strict separation assumption prevents an escape to infinity since the sequence of estimators must settle on some value eventually. The uniform convergence assumption prevents highly oscillatory behavior that would create multiple points of convergence like in the Wald proof. Specifically, the uniform convergence assumption allows us to establish that <span class="math inline">\(M_n\)</span> converges in probability to <span class="math inline">\(M\)</span> which is much stronger than the Wald result.</p>
+</div>
+<div id="rate-of-convergence" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Rate of Convergence<a href="convergence-of-m-estimators-made-simpler.html#rate-of-convergence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Rate of convergence proofs are difficult since M-estimators can be any arbitrary estimator as long as it fits the convergence criteria. The criterion function formulation of M-estimators is popular as this is one area where we can guarantee a radical rate of convergence given some regularity conditions (discussed below). One might expect that the criterion function formulation has the canonical <span class="math inline">\(\sqrt n\)</span> rate of convergence given that the estimator is the sample mean of the estimator results. However, each of the estimator outputs is actually taken over the product space of all the random variable realizations. Therefore, the <span class="math inline">\(M_n\)</span>s aren’t independent and the CLT doesn’t apply. The further problem is that M-estimators need not take this criterion function form and can be more pathological.
+It is easy to construct a consistent M-estimator that has an arbitrarily low convergence rate as long as one is willing to throw out an arbitrarily large amount of data. Let’s do <span class="math inline">\(e^n\)</span>. Take a given sequence of estimators with a <span class="math inline">\(\sqrt n\)</span>-law. Use this to construct a new sequence of estimators where each of the previous estimators <span class="math inline">\(M_n\)</span> is repeated <span class="math inline">\(e^n\)</span> times irregardless of the outcome of the random process. This process now as a <span class="math inline">\(e^n\sqrt n\)</span> rate of convergence (it is sufficient that the values of the new norming sequence agree with the old norming sequence on one estimator for each n-length sequence in the new estimator sequence up to a multiplicative constant which is easy to check).
+The problem of identifying a convergence rate is therefore too general to provide overall heuristics for any type of estimator. However, there are useful theorems that provide polynomial rates of convergence for different conditions on the estimator sequence provided it is of the criterion function form. The following example focuses on relating bounds on the changes in the population mean to bounds on the sample mean: this type of analysis will probably be familiar to those well versed in the optimization, signal-processing, or machine-learning literature. The rate of convergence is controlled by a deterministic part and a stochastic part. If the models around the true parameter are very different from the true model (ie the true model is a sharp maxima), then convergence will be faster. This faster convergence is because it will be easy to pick out the actual maxima from the “noise” due to the inherent randomness of the sampling procedure. Dually, if the sample mean converges to the true mean quickly, that level of “noise” is lower and overall convergence is therefore faster.
+A more formal statement is suppose that <span class="math inline">\(M\)</span> is of the criterion function form and has bounds <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> where <span class="math inline">\(\alpha\)</span> is essentially the bound on the convergence rate of the criterion function relative to its parameter and <span class="math inline">\(\beta\)</span> is the bound on the expected deviation of the sample mean from the population mean for the criterion function (see book for a more rigorous formulation). The rate of convergence is then <span class="math inline">\(n^\frac{1}{2\alpha-2\beta}\)</span>. This can be applied to Lipschitz functions to give the usual <span class="math inline">\(\sqrt n\)</span> rate of convergence.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-vander" class="csl-entry">
+Van der Vaart, A. W. 2000. <em>Asymptotic Statistics</em>. Cambridge University Press.
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gaussian-process-mbo-for-random-forests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

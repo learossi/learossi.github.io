@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Gaussian Process MBO for Random Forests | Personal Projects</title>
-  <meta name="description" content="1 Gaussian Process MBO for Random Forests | Personal Projects" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <title>2 Gaussian Process MBO for Random Forests | Personal Projects</title>
+  <meta name="description" content="2 Gaussian Process MBO for Random Forests | Personal Projects" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Gaussian Process MBO for Random Forests | Personal Projects" />
+  <meta property="og:title" content="2 Gaussian Process MBO for Random Forests | Personal Projects" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Gaussian Process MBO for Random Forests | Personal Projects" />
+  <meta name="twitter:title" content="2 Gaussian Process MBO for Random Forests | Personal Projects" />
   
   
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="preface.html"/>
+<link rel="prev" href="convergence-of-m-estimators-made-simpler.html"/>
 <link rel="next" href="the-effect-of-increased-campaign-spending-on-election-results.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -118,6 +118,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -132,46 +158,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html"><i class="fa fa-check"></i><b>1</b> Gaussian Process MBO for Random Forests</a>
+<li class="chapter" data-level="1" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html"><i class="fa fa-check"></i><b>1</b> Convergence of M-Estimators made simple(r)</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#overview-of-gaussian-processes"><i class="fa fa-check"></i><b>1.1</b> Overview of Gaussian Processes</a></li>
-<li class="chapter" data-level="1.2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#application-to-random-forests"><i class="fa fa-check"></i><b>1.2</b> Application to Random Forests</a></li>
-<li class="chapter" data-level="1.3" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#data"><i class="fa fa-check"></i><b>1.3</b> Data</a></li>
-<li class="chapter" data-level="1.4" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#results"><i class="fa fa-check"></i><b>1.4</b> Results</a>
-<ul>
-<li class="chapter" data-level="1.4.1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#grid-search"><i class="fa fa-check"></i><b>1.4.1</b> Grid Search</a></li>
-<li class="chapter" data-level="1.4.2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-search"><i class="fa fa-check"></i><b>1.4.2</b> Gaussian Process Search</a></li>
+<li class="chapter" data-level="1.1" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html#what-is-an-m-estimator"><i class="fa fa-check"></i><b>1.1</b> What is an M-Estimator?</a></li>
+<li class="chapter" data-level="1.2" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html#consistency"><i class="fa fa-check"></i><b>1.2</b> Consistency</a></li>
+<li class="chapter" data-level="1.3" data-path="convergence-of-m-estimators-made-simpler.html"><a href="convergence-of-m-estimators-made-simpler.html#rate-of-convergence"><i class="fa fa-check"></i><b>1.3</b> Rate of Convergence</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#discussion"><i class="fa fa-check"></i><b>1.5</b> Discussion</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html"><i class="fa fa-check"></i><b>2</b> The Effect of Increased Campaign Spending on Election Results</a>
+<li class="chapter" data-level="2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html"><i class="fa fa-check"></i><b>2</b> Gaussian Process MBO for Random Forests</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#background"><i class="fa fa-check"></i><b>2.1</b> Background</a></li>
-<li class="chapter" data-level="2.2" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#motivating-trends"><i class="fa fa-check"></i><b>2.2</b> Motivating Trends</a></li>
-<li class="chapter" data-level="2.3" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#initial-regression-analysis"><i class="fa fa-check"></i><b>2.3</b> Initial Regression Analysis</a></li>
-<li class="chapter" data-level="2.4" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#iv-regression"><i class="fa fa-check"></i><b>2.4</b> IV Regression</a></li>
-<li class="chapter" data-level="2.5" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#discussion-conclusion"><i class="fa fa-check"></i><b>2.5</b> Discussion &amp; Conclusion</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html"><i class="fa fa-check"></i><b>3</b> Neural Network Methods for Electricity Demand Forecasting</a>
+<li class="chapter" data-level="2.1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#overview-of-gaussian-processes"><i class="fa fa-check"></i><b>2.1</b> Overview of Gaussian Processes</a></li>
+<li class="chapter" data-level="2.2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#application-to-random-forests"><i class="fa fa-check"></i><b>2.2</b> Application to Random Forests</a></li>
+<li class="chapter" data-level="2.3" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#data"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
+<li class="chapter" data-level="2.4" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#results"><i class="fa fa-check"></i><b>2.4</b> Results</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
-<li class="chapter" data-level="3.2" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#common-neural-network-designs-for-forecasting"><i class="fa fa-check"></i><b>3.2</b> Common Neural Network Designs for Forecasting</a></li>
-<li class="chapter" data-level="3.3" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#problem-statement-and-data"><i class="fa fa-check"></i><b>3.3</b> Problem Statement and Data</a></li>
-<li class="chapter" data-level="3.4" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#lstm-results"><i class="fa fa-check"></i><b>3.4</b> LSTM Results</a></li>
-<li class="chapter" data-level="3.5" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#cnn-results"><i class="fa fa-check"></i><b>3.5</b> CNN Results</a></li>
-<li class="chapter" data-level="3.6" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#analysis"><i class="fa fa-check"></i><b>3.6</b> Analysis</a></li>
+<li class="chapter" data-level="2.4.1" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#grid-search"><i class="fa fa-check"></i><b>2.4.1</b> Grid Search</a></li>
+<li class="chapter" data-level="2.4.2" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-search"><i class="fa fa-check"></i><b>2.4.2</b> Gaussian Process Search</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="the-effect-of-seed-market-competition-on-farmers.html"><a href="the-effect-of-seed-market-competition-on-farmers.html"><i class="fa fa-check"></i><b>4</b> The Effect of Seed Market Competition on Farmers</a></li>
-<li class="chapter" data-level="5" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html"><i class="fa fa-check"></i><b>5</b> Chicago Taxi Demand Estimation</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#data-1"><i class="fa fa-check"></i><b>5.1.1</b> Data</a></li>
-<li class="chapter" data-level="5.1.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#trends"><i class="fa fa-check"></i><b>5.1.2</b> Trends</a></li>
-<li class="chapter" data-level="5.1.3" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#possible-estimation-procedures"><i class="fa fa-check"></i><b>5.1.3</b> Possible Estimation Procedures</a></li>
-<li class="chapter" data-level="5.1.4" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#stl-decomposition"><i class="fa fa-check"></i><b>5.1.4</b> STL Decomposition</a></li>
+<li class="chapter" data-level="2.5" data-path="gaussian-process-mbo-for-random-forests.html"><a href="gaussian-process-mbo-for-random-forests.html#discussion"><i class="fa fa-check"></i><b>2.5</b> Discussion</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#full-data-procedures"><i class="fa fa-check"></i><b>5.2</b> Full Data Procedures</a></li>
+<li class="chapter" data-level="3" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html"><i class="fa fa-check"></i><b>3</b> The Effect of Increased Campaign Spending on Election Results</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#motivating-trends"><i class="fa fa-check"></i><b>3.2</b> Motivating Trends</a></li>
+<li class="chapter" data-level="3.3" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#initial-regression-analysis"><i class="fa fa-check"></i><b>3.3</b> Initial Regression Analysis</a></li>
+<li class="chapter" data-level="3.4" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#iv-regression"><i class="fa fa-check"></i><b>3.4</b> IV Regression</a></li>
+<li class="chapter" data-level="3.5" data-path="the-effect-of-increased-campaign-spending-on-election-results.html"><a href="the-effect-of-increased-campaign-spending-on-election-results.html#discussion-conclusion"><i class="fa fa-check"></i><b>3.5</b> Discussion &amp; Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html"><i class="fa fa-check"></i><b>4</b> Neural Network Methods for Electricity Demand Forecasting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#common-neural-network-designs-for-forecasting"><i class="fa fa-check"></i><b>4.2</b> Common Neural Network Designs for Forecasting</a></li>
+<li class="chapter" data-level="4.3" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#problem-statement-and-data"><i class="fa fa-check"></i><b>4.3</b> Problem Statement and Data</a></li>
+<li class="chapter" data-level="4.4" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#lstm-results"><i class="fa fa-check"></i><b>4.4</b> LSTM Results</a></li>
+<li class="chapter" data-level="4.5" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#cnn-results"><i class="fa fa-check"></i><b>4.5</b> CNN Results</a></li>
+<li class="chapter" data-level="4.6" data-path="neural-network-methods-for-electricity-demand-forecasting.html"><a href="neural-network-methods-for-electricity-demand-forecasting.html#analysis"><i class="fa fa-check"></i><b>4.6</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-effect-of-seed-market-competition-on-farmers.html"><a href="the-effect-of-seed-market-competition-on-farmers.html"><i class="fa fa-check"></i><b>5</b> The Effect of Seed Market Competition on Farmers</a></li>
+<li class="chapter" data-level="6" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html"><i class="fa fa-check"></i><b>6</b> Chicago Taxi Demand Estimation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#introduction-1"><i class="fa fa-check"></i><b>6.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#data-1"><i class="fa fa-check"></i><b>6.1.1</b> Data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#trends"><i class="fa fa-check"></i><b>6.1.2</b> Trends</a></li>
+<li class="chapter" data-level="6.1.3" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#possible-estimation-procedures"><i class="fa fa-check"></i><b>6.1.3</b> Possible Estimation Procedures</a></li>
+<li class="chapter" data-level="6.1.4" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#stl-decomposition"><i class="fa fa-check"></i><b>6.1.4</b> STL Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chicago-taxi-demand-estimation.html"><a href="chicago-taxi-demand-estimation.html#full-data-procedures"><i class="fa fa-check"></i><b>6.2</b> Full Data Procedures</a></li>
 </ul></li>
 </ul>
 
@@ -190,10 +222,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gaussian-process-mbo-for-random-forests" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Gaussian Process MBO for Random Forests<a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-mbo-for-random-forests" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview-of-gaussian-processes" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Overview of Gaussian Processes<a href="gaussian-process-mbo-for-random-forests.html#overview-of-gaussian-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="gaussian-process-mbo-for-random-forests" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Gaussian Process MBO for Random Forests<a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-mbo-for-random-forests" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="overview-of-gaussian-processes" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Overview of Gaussian Processes<a href="gaussian-process-mbo-for-random-forests.html#overview-of-gaussian-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hyperparameter tuning is a tricky subject. Oftentimes, one simply conjures up a reasonable value from the some article about whatever architecture that one read sometime or another and plays with that until it works. This type of approach is reasonable insofar as hyperparameter tuning is very, very hard and there are a lot of answers that may look, a priori, equally reasonable while providing wildly different results in practice. Take neural networks for example. One could take a given value for the learning rate. Except that there’s a lot of literature that shows learning rate and batch size interact to shape the loss the function and one can’t set them alone. Or say you want to vary the weights of different hidden layers. Except that also affects your weight initialization strategy. And it goes on.</p>
 <p>Hyperparameter optimization is often very difficult and consensus on good decisions for any one dataset (think MNIST) is frequently the product of a multitude of separate experiments. The go-to approach when one has a relatively flat prior about the efficacy of a set of parameters within a compact set is just grid search. This does get the job done but is computationally expensive and ruinously vulnerable to the curse of dimensionality when dealing with complex or highly tunable models.</p>
 <p>All these facts make efficient automated approaches to hyperparameter tuning highly desirable. The issue here is that it is often impossible (or unclear how) to differentiate model parameters with respect to the data. Either the models employ functions which themselves are discontinuous or nondifferentiable or the parameter values are integers which means there is no reasonable interpretation of the change in objective in a neighborhood around the parameter. The lack of a derivative means that most traditional continuous optimization methods become either useless or inefficient (integer programming for example). There are a few possible solutions to this problem. One is to transform the model so that it may be differentiated. VAEs use a parametric assumption on latent space to allow differentiation. Random hinge forests are a differentiable version of the random forests I will talk about later.</p>
@@ -202,13 +234,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>With the covariance assumption in place, estimating the value of a point in the hyperparameter domain is as simple as calculating the conditional mean of a jointly gaussian variable. Of course this is just an estimate of the actual value of the objective function and may bear only a small resemblance to reality. The procedure to find the actual minima in the hyperparameter surface is an iterative one. Given the sampled points, some nonlinear optimization is used to find an estimate of the minima of the initial objective function; BSGF is the most common method but others are obviously available. The estimated minima is then sampled and included with the other points to form the basis for a new objective. This process is then repeated until some stopping rule is reached.</p>
 <p>The primary benefit here is that the number of models trained is minimized. The tradeoff is that one must pay for the cost of whatever nonlinear optimization function one is using. Whether that is beneficial largely depends on the hyperparameter space and the model among other things.</p>
 </div>
-<div id="application-to-random-forests" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Application to Random Forests<a href="gaussian-process-mbo-for-random-forests.html#application-to-random-forests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="application-to-random-forests" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Application to Random Forests<a href="gaussian-process-mbo-for-random-forests.html#application-to-random-forests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I’m going to test this on random forests. Random forests are a bagging method that allows multiple (relatively) uncorrelated trees to vote on the class of an observation. In short, multiple decision trees are fitted to individual bootstrap estimates of the sample data. When splitting each tree at each level, features are again bootstrapped to reduce tree correlation. An observation is then given a predicted class value based on the plurality of trees.</p>
 <p>Random forests are beneficial in that there are a lot of potential hyperparameters to tune. One can adjust the number of trees, maximum length of trees, the maximum number of terminal nodes, the bagging parameters for the individual trees, the bagging parameters for the nodes, and so forth. The hyperparameter space can be high dimensional if one chooses to make it so which makes it ideal for testing out gaussian process regression. Random forests are also traditionally very flexible which make overfitting an issue. So, instead of tuning the training error as the objective function, I use the test error in n-fold cross validation as the objective function.</p>
 </div>
-<div id="data" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Data<a href="gaussian-process-mbo-for-random-forests.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data<a href="gaussian-process-mbo-for-random-forests.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I use a dataset of wine vintages from the UC Irvine machine learning repository. It has approximately 180 wines from 3 different italian wineries. Each of them were given chemical composition tests that give values for a variety of quantities like alcohol percent, hue, or the amount of phenols. There are 13 variables in total and which are split roughly equally between three possible classes.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="gaussian-process-mbo-for-random-forests.html#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">=</span> <span class="fu">melt</span>(<span class="fu">select</span>(wine_data, <span class="sc">!</span><span class="fu">c</span>(proline, origin)), <span class="at">values.name =</span> <span class="st">&quot;Value&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a href="gaussian-process-mbo-for-random-forests.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">log</span>(value))</span></code></pre></div>
@@ -222,10 +254,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 I take the log for this graph to make each level visible on the same graph but don’t do so for the data itself. Anyways, most variables have roughly the same variance, lack distinguishable tails, and have roughly similar levels. It’s nice data where I don’t have to do much (databases are so nice).</p>
 <p>The amount of data is relatively small but that’s good for me because it is still able to be used while not requiring me to run grid search on a massive dataset. The implications thereof will be discussed later.</p>
 </div>
-<div id="results" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> Results<a href="gaussian-process-mbo-for-random-forests.html#results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="grid-search" class="section level3 hasAnchor" number="1.4.1">
-<h3><span class="header-section-number">1.4.1</span> Grid Search<a href="gaussian-process-mbo-for-random-forests.html#grid-search" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="results" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Results<a href="gaussian-process-mbo-for-random-forests.html#results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="grid-search" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Grid Search<a href="gaussian-process-mbo-for-random-forests.html#grid-search" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>I use the RandomForest package from R to do this analysis. It has a wide variety of parameters over which I can optimize and I select a few. The first is the number of trees that the random forest produces. This parameter controls the flexibility of the model; the more trees there are and the more bagged samples the trees are being trained on, the more specific models will be able to specialize on certain parts of the data. The next variable is the number of bagged variables that are sampled at each split; a lower number increases tree decorrelation but raises the number of trees required to represent the sample because each tree is less powerful. There is also a binary variable that controls if sampling with replacement is done that I allow to be toggled along with a variable that selects the sample size for each tree. And finally, the node size parameter controls how many samples can be contained within a node without it splitting. Together, these form the basis of a parameter set in the ParamHelpers pack that we can plug into the mlrMBO package to optimize it.</p>
 <p>The main metric I’m interested in is how many iterations it takes the gaussian process to obtain a solution with a comparable objective value as the one that the grid search obtains. Given that I’m concerned about speed, I could hypothetically time each method and report those speeds. However, that seems besides the point to me. As mentioned, the main factor affecting speed is the time it takes to train the model and the convergence rate of the optimization algorithm. If I found that grid search was faster, I could replace this model with a similar one that takes 10x longer to train and get the opposite result. The convergence speed of the gaussian process is something that is less subject to changes in the previous two variables and thus more interesting an object of study.</p>
 <p>Anyways, cross validation libraries in R tend to be a bit library dependent and it’s pretty easy to implement, so I write my own k-fold cross validation script. Instead of explicitly defining parameter values,</p>
@@ -303,8 +335,8 @@ I take the log for this graph to make each level visible on the same graph but d
 <p><img src="gauss_process_files/figure-html/grid_plot-1.png" width="672" />
 Looking at the points visually (and at the regression plane) seem to confirm the intuition the greater number of trees and larger samples are good. However, it is easy to look at any region in the plot and find points which have low error. Of course, this doesn’t mean grid search has hopelessly overfit per se. Just that one can find evidence that many configurations of hyperparameters are efficient if one wants to and that a more judicious procedure is necessary for selecting the final grid point.</p>
 </div>
-<div id="gaussian-process-search" class="section level3 hasAnchor" number="1.4.2">
-<h3><span class="header-section-number">1.4.2</span> Gaussian Process Search<a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-search" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="gaussian-process-search" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Gaussian Process Search<a href="gaussian-process-mbo-for-random-forests.html#gaussian-process-search" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>I use the mlrMBO package for Gaussian Process search. This package wraps the ParamHelper, smoof, and DiceKriging packages which implement most of the necessary logic. The MBO function accepts 3 types of objects: a learner which determines the next step to take in the parameter space, a design matrix which gives the priors over the space, and a control object which determines termination and local search depth. In my case, I sample 20 points uniformly from the parameter space, and allow a 10 iteration focus search to identify a locally optimal point. I allow the process to run for four iterations.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="gaussian-process-mbo-for-random-forests.html#cb9-1" aria-hidden="true" tabindex="-1"></a>forest_obj <span class="ot">=</span> smoof<span class="sc">::</span><span class="fu">makeSingleObjectiveFunction</span>(<span class="at">name =</span> <span class="st">&quot;Gaussian Process Forest&quot;</span>, </span>
 <span id="cb9-2"><a href="gaussian-process-mbo-for-random-forests.html#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">fn =</span> forest_wrapper,</span>
@@ -340,8 +372,8 @@ Looking at the points visually (and at the regression plane) seem to confirm the
 <p>This result seems very reasonable based on our previous investigation of what optimal parameters might be. Perhaps the number of trees is too large or sample size is too small, but the values are close. The validation loss (“Objective” in the output) is higher than comparable objectives in the previous section, but this could be expected given the previous discussion on overfitting. Notice that there isn’t really that much interpretation for me to be doing here: I run the algorithm and the fact that I’m doing many less function evaluations means that there’s no huge space of results I need to consider. I just pick the one with the lowest loss.</p>
 </div>
 </div>
-<div id="discussion" class="section level2 hasAnchor" number="1.5">
-<h2><span class="header-section-number">1.5</span> Discussion<a href="gaussian-process-mbo-for-random-forests.html#discussion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="discussion" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Discussion<a href="gaussian-process-mbo-for-random-forests.html#discussion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The most notable thing here is that I have gotten a similar result to grid search with the gaussian process only by doing 4 iterations that evaluate a maximum of 10 points each. This is a miniscule fraction of the 66k evaluations that I did in the grid search. I know I said I wouldn’t talk about time, but it is worth mentioning that the grid search took 45ish minutes while the gaussian process took easily less than a minute. The easy conclusion is that gaussian processes are a lot more efficient at finding approximate solutions that are near the minima but might not be the best compared to an exhaustive search.</p>
 <p>However, this analysis neglects the overfitting concerns that imply that the lower bounds on the validation error for exhaustive type searchs are misrepresentative of the true test error. I’ve held out a test set of 20 observations; let’s take a look at the test errors there compared to the test errors on the recommended model from gaussian process regression.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="gaussian-process-mbo-for-random-forests.html#cb11-1" aria-hidden="true" tabindex="-1"></a>grid_loss <span class="sc">%&gt;%</span></span>
@@ -368,7 +400,7 @@ Looking at the points visually (and at the regression plane) seem to confirm the
           </div>
         </div>
       </div>
-<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="convergence-of-m-estimators-made-simpler.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="the-effect-of-increased-campaign-spending-on-election-results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
