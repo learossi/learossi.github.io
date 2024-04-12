@@ -1,3 +1,12 @@
+almost-all-regression-confidence-intervals-are-underestimated
+introduction
+theory
+we-run-too-many-regressions
+preregistration-is-a-good-thing-actually
+a-statistical-argument
+practically-speaking
+simulations
+what-does-it-all-mean
 convergence-of-m-estimators-made-simpler
 what-is-an-m-estimator
 consistency
@@ -17,7 +26,7 @@ initial-regression-analysis
 iv-regression
 discussion-conclusion
 neural-network-methods-for-electricity-demand-forecasting
-introduction
+introduction-1
 common-neural-network-designs-for-forecasting
 problem-statement-and-data
 lstm-results
@@ -25,7 +34,7 @@ cnn-results
 analysis
 the-effect-of-seed-market-competition-on-farmers
 chicago-taxi-demand-estimation
-introduction-1
+introduction-2
 data-1
 trends
 possible-estimation-procedures
